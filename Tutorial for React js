@@ -1,0 +1,52 @@
+                            React js
+
+React is a free and open-source front-end JavaScript library for 
+building user interfaces based on components. It is maintained by Meta
+and a community of individual developers and companies. React can be used
+to develop single-page, mobile, or server-rendered applications with frameworks like Next.js.
+
+
+installe relase:  29 May 2013
+
+auther : Jorden Walke 
+
+
+
+The latest version of the library, React 18, was released in March 2022
+
+
+
+what is library?
+
+In computer programming, a library refers to a collection of files, 
+programs, routines, scripts, or functions that can be referenced
+in the programming code.
+
+
+
+
+
+
+               Node js
+
+
+
+Node. js is an open-source, cross-platform JavaScript runtime environment and library for running 
+web applications outside the client's browser. 
+Ryan Dahl developed it in 2009, and its latest iteration, 
+version 15.14, was released in April 2021
+
+There are building fast and scalable server-side and networking applications.
+It runs on the V8 JavaScript runtime engine
+
+
+What is cross-platform devices?
+
+In computing, cross-platform (also multi-platform) refers to different computing platforms
+(Windows, iOS, Android, macOS, Linux) or even device types (desktops, mobile).
+
+npm is the default package manager for the JavaScript runtime environment Node.js.
+It consists of a command line client, also called npm
+
+
+npx is used to execute JavaScript packages downloaded this way,NPX stand for Node Package Execute
