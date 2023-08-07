@@ -73,3 +73,76 @@ npx is used to execute JavaScript packages downloaded this way,NPX stand for Nod
 
   </body>
 </html>
+
+
+
+
+Es 6 - Class
+
+
+A class is a type of function,
+but instead of using the keyword function to initiate it, 
+we use the keyword class, 
+and the properties are assigned inside a constructor() method.
+
+class Car{
+    constructor (name, year){
+      this.name = name;
+      this.year = year;
+      
+    }
+    display (){
+        return `name =${this.name} year =${this.year}`
+    }
+    age(){
+        return new Date().getFullYear() 
+        - this.year;
+    }
+   
+}
+ const obj1  = new Car("Kia",2019)
+
+console.log(`${obj1.display()} Age=${obj1.age()}`)
+
+                     /  class inheritance/
+
+
+
+To create a class inheritance, use the extends keyword.
+
+A class created with a class inheritance inherits all the methods
+from another class
+
+class Vehicle {
+    constructor (gear, speed){
+      this.gear= gear;
+      this.speed = speed;
+      
+    }
+    display (){
+        return `Total Gears =${this.gear} Speed per km =${this.speed}`
+    }
+}
+    class BMW extends Vehicle {
+        constructor (gear,speed,wheels){
+            super(gear,speed );
+            this.wheels = wheels;
+        }
+        display2 (){
+            return `${super.display()} No of wheels =  ${this.wheels}`
+        }
+    }
+    
+    
+
+ const obj1  = new BMW (1,4,2019)
+
+console.log(`${obj1.display2()}`)
+
+
+The super() method refers to the parent class.
+
+By calling the super() method in the constructor method, 
+we call the parent's constructor method and get access to 
+the parent's properties and methods.
+
