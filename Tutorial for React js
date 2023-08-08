@@ -146,3 +146,110 @@ By calling the super() method in the constructor method,
 we call the parent's constructor method and get access to 
 the parent's properties and methods.
 
+
+                                   Destructring
+
+Destructuring is a new feature introduced in ES6 which allows you to easily
+extract values from Objects or Arrays and assign to new values or even assign
+default values to undefined properties
+
+
+old way to getting objects 
+
+let  people = {
+    
+    first : "hlo",
+    last : "how"
+    
+}
+let ones = people.first
+let twos = people.last
+
+console.log(ones + twos );
+
+Es 6 
+
+let  people = {
+    
+    first : "hlo",
+    last : "kumar"
+    
+}
+
+const { first ,last } = 
+
+console.log(first)
+
+
+Rename the variables 
+3.
+const {first: firstname, last : lastname }= people 
+
+
+console.log(firstname)
+
+
+  4. 
+
+let  people = {
+    
+    first : "hlo",
+    last : "how",
+    age: 34
+}
+const {first , ...rest} = people ;
+
+console.log(rest)
+
+
+
+5. nested Object destructuring
+
+let  people = {
+    id:1,
+name:{
+    first : "hlo",
+    last : "how"
+},
+    age: 34
+
+
+}
+const { id, name: {first,last}, name } = people ;
+
+console.log(name)
+console.log(first)
+
+
+      Array
+
+old - Es5
+
+const arr = [2,3, 4]
+
+let x = arr[0];
+let y = arr[1];
+let z = arr[2]
+
+console.log(x)
+
+new - Es6
+
+
+const arr = [2,3, 4]
+
+const [x,y,z]= arr
+
+console.log(x)
+
+
+
+2.
+
+const number= ["https", "you" ,"and", "front" ]
+
+const [x,...y]= number
+console.log(y)
+
+
+
