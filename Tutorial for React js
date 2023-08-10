@@ -250,6 +250,6 @@ const number= ["https", "you" ,"and", "front" ]
 
 const [x,...y]= number
 console.log(y)
-
+React that represents the data that a component can maintain and manage. It allows a component to keep track of information that can change over time and affect the rendering of the component
 
 
