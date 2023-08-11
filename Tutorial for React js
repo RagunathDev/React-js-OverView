@@ -253,3 +253,61 @@ console.log(y)
 React that represents the data that a component can maintain and manage. It allows a component to keep track of information that can change over time and affect the rendering of the component
 
 
+
+React components
+class components
+
+State
+
+State is a concept in React that represents the data that a component can maintain and manage. 
+It allows a component to keep track of information that can change over time and affect the rendering
+of the component. 
+
+
+Class components have the ability to define and manage their own state.
+
+
+Initialize State: In the constructor of the class component, 
+
+you define the initial state using the this.state property. 
+
+The initial state is an object that holds the data you want to track.
+
+Accessing State: You can access the state data using this.state.propertyName.
+
+
+
+
+Updating State: To update the state, you should never modify the state directly. 
+Instead, you use the this.setState() method.
+
+This method takes an object that represents the updated state properties and merges 
+them with the existing state.
+
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0, // Initial state
+    };
+  }
+
+  increment = () => {
+    
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Counter: {this.state.count}</h1>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
