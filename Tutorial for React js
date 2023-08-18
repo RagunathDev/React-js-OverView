@@ -311,3 +311,146 @@ class Counter extends Component {
 
 export default Counter;
 
+
+
+vyhj b ugg b BB
+
+
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const colors = ['red', 'green', 'blue'];
+
+  return <ChildComponent colors={colors} />;
+}
+
+
+import React from 'react';
+
+function ChildComponent(props) {
+  return (
+    <div>
+      <h2>Colors List</h2>
+      <ul>
+        {props.colors.map((color, index) => (
+          <li key={index}>{color}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+
+import React, { Component } from 'react';
+
+class SimpleForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    };
+  }
+
+  handleInputChange = event => {
+    this.setState({
+      inputValue: event.target.value
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Simple Form</h2>
+        <input
+          type="text"
+          value={this.state.inputValue}
+          onChange={this.handleInputChange}
+        />
+        <p>Input Value: {this.state.inputValue}</p>
+      </div>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Simple Form Example</h1>
+        <SimpleForm />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+
+
+
+
+import React, { Component } from 'react';
+
+class TodoList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [],
+      newTodo: ''
+    };
+  }
+
+  addTodo = () => {
+    const { todos, newTodo } = this.state;
+    if (newTodo.trim() !== '') {
+      this.setState({
+        todos: [...todos, newTodo],
+        newTodo: ''
+      });
+    }
+  };
+
+  handleInputChange = event => {
+    this.setState({
+      newTodo: event.target.value
+    });
+  };
+
+  render() {
+    const { todos, newTodo } = this.state;
+    return (
+      <div>
+        <h2>Todo List</h2>
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index}>{todo}</li>
+          ))}
+        </ul>
+        <input type="text" value={newTodo} onChange={this.handleInputChange} />
+        <button onClick={this.addTodo}>Add Todo</button>
+      </div>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Todo List Example</h1>
+        <TodoList />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+
+
+
