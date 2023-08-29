@@ -450,6 +450,76 @@ class App extends Component {
 export default App;
 
 
+import React, { useState } from 'react';
+
+function Child() {
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
+  const [editIndex, setEditIndex] = useState(-1);
+  const [editedTodo, setEditedTodo] = useState('');
+
+  const addTodo = () => {
+    if (newTodo.trim() !== '') {
+      setTodos([...todos, newTodo]);
+      setNewTodo('');
+    }
+  };
+
+  const handleDelete = (index) => {
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodos);
+  };
+
+  const handleEditSave = (index) => {
+    const updatedTodos = todos.map((todo, i) =>
+      i === index ? editedTodo : todo
+    );
+    setTodos(updatedTodos);
+    setEditIndex(-1);
+    setEditedTodo('');
+  };
+
+  const editItem = (index) => {
+    setEditIndex(index);
+    setEditedTodo(todos[index]);
+  };
+
+  return (
+    <div>
+      <h2 style={{ color: 'yellow', fontSize: 20 }}>Todo List</h2>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+      />
+      <button onClick={addTodo}>Add Todo</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {editIndex === index ? (
+              <>
+                <input
+                  type="text"
+                  value={editedTodo}
+                  onChange={(e) => setEditedTodo(e.target.value)}
+                />
+                <button onClick={() => handleEditSave(index)}>Save</button>
+              </>
+            ) : (
+              <>
+                {todo}
+                <button onClick={() => handleDelete(index)}>Delete</button>
+                <button onClick={() => editItem(index)}>Edit</button>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Child;
 
 
 
